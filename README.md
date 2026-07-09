@@ -1,125 +1,140 @@
-# Cyrene's Name Roller Documentation
+# CyreneNameRoller-Docs
 
-This repository contains the official documentation for [Cyreneの随机点名器](https://github.com/Cyrene2008/CyreneNameRoller), a random name picking desktop application built with Vue 3 + Electron.
+CyreneNameRoller 官方文档站点，基于 [VuePress](https://vuepress.vuejs.org/) 和 [vuepress-theme-plume](https://github.com/pengzhanbo/vuepress-theme-plume) 构建。
 
-## About
+## 📄 许可证
 
-Cyreneの随机点名器 is a feature-rich random name picking desktop application that supports:
+本项目采用 **CC BY-NC-SA 4.0**（署名-非商业性使用-相同方式共享 4.0 国际）许可证。
 
-- **Random Name Picking**: Single/multiple modes, no repeat picking, balanced algorithm
-- **Card Flip Name Picking**: 3D card flip animation, one-click multiple picking
-- **Data Management**: Statistics, pick records, list management, import/export
-- **Personalization**: UI scaling, theme switching, language switching
-- **Modern Interface**: Windows 11 Fluent Design language
-- **Cross-Platform**: Windows 10/11 support, experimental macOS/Linux support
+### 许可证说明
 
-## Documentation
+- **署名 (BY)**：你必须给予原作者署名，提供指向许可证的链接，同时标明是否（对原始作品）作了修改。
+- **非商业性使用 (NC)**：你可以自由地共享、修改本作品，但不得用于商业目的。
+- **相同方式共享 (SA)**：如果你对本作品进行修改、转换，或依据本作品创作新作品，你必须基于相同的许可证条款分发你创作的新作品。
 
-This documentation is built with [VuePress](https://vuepress.vuejs.org/) and the [Plume Theme](https://github.com/pengzhanbo/vuepress-theme-plume).
+### 完整许可证文本
 
-### Available Languages
+详见 [LICENSE](./LICENSE) 文件。
 
-- [English](/en/) - English documentation
-- [中文](/) - Chinese documentation
+## 🌐 在线文档
 
-### Documentation Structure
+- **中文文档**: [https://点名器.昔涟.cn](https://点名器.昔涟.cn)
+- **GitHub**: [https://github.com/Cyrene2008/CyreneNameRoller-Docs](https://github.com/Cyrene2008/CyreneNameRoller-Docs)
 
-```
-docs/
-├── doc/
-│   ├── guide/          # User guides
-│   │   ├── start.md
-│   │   ├── interface.md
-│   │   └── features.md
-│   ├── settings/       # Settings documentation
-│   │   ├── basic.md
-│   │   └── advanced.md
-│   └── resources/      # Additional resources
-│       └── contribute.md
-├── en/                 # English version
-│   └── doc/
-│       ├── guide/
-│       ├── settings/
-│       └── resources/
-└── faq/                # Frequently asked questions
-```
+## 🚀 快速开始
 
-## Building the Documentation
+### 安装依赖
 
-### Prerequisites
-
-- Node.js 18 or higher
-- pnpm (recommended) or npm
-
-### Installation
-
-1. Clone this repository:
-```bash
-git clone https://github.com/Cyrene2008/CyreneNameRoller-Docs.git
-cd CyreneNameRoller-Docs
-```
-
-2. Install dependencies:
 ```bash
 pnpm install
 ```
 
-### Development
-
-To run the documentation locally in development mode:
+### 本地开发
 
 ```bash
+# 启动开发服务器
 pnpm docs:dev
+
+# 或使用热重载
+pnpm docs:dev-clean
 ```
 
-The documentation will be available at `http://localhost:8080`
-
-### Build
-
-To build the documentation for production:
+### 构建
 
 ```bash
+# 构建生产版本
 pnpm docs:build
-```
 
-The built files will be in the `docs/.vuepress/dist` directory.
-
-### Preview Built Documentation
-
-To preview the built documentation:
-
-```bash
+# 预览构建结果
 pnpm docs:preview
 ```
 
-## Project Links
+## 📂 项目结构
 
-- **Main Project**: [Cyreneの随机点名器](https://github.com/Cyrene2008/CyreneNameRoller)
-- **Documentation**: [This Repository](https://github.com/Cyrene2008/CyreneNameRoller-Docs)
+```
+CyreneNameRoller-Docs/
+├── docs/
+│   ├── .vuepress/         # VuePress 配置
+│   │   ├── config.ts      # 主配置
+│   │   ├── plume.config.ts # Plume 主题配置
+│   │   ├── navbar.ts      # 导航栏配置
+│   │   └── client.ts      # 客户端配置
+│   ├── doc/               # 中文文档
+│   │   ├── guide/         # 指南
+│   │   ├── settings/      # 设置
+│   │   └── resources/     # 资源
+│   ├── en/                # 英文文档
+│   ├── faq/               # 常见问题
+│   └── index.md           # 首页
+├── .github/workflows/     # GitHub Actions
+├── LICENSE                # CC BY-NC-SA 4.0 许可证
+├── package.json           # 项目配置
+└── README.md              # 本文件
+```
 
-## License
+## 📚 文档内容
 
-This documentation is licensed under the same license as the main project. Please refer to the [LICENSE](https://github.com/Cyrene2008/CyreneNameRoller/blob/main/LICENSE) file for details.
+### 指南（Guide）
+- [开始使用](docs/doc/guide/start.md)
+- [界面介绍](docs/doc/guide/interface.md)
+- [功能指南](docs/doc/guide/features.md)
 
-## Contributing
+### 设置（Settings）
+- [基本设置](docs/doc/settings/basic.md)
+- [高级设置](docs/doc/settings/advanced.md)
 
-Contributions to the documentation are welcome! Please refer to the [Contribution Guide](/en/doc/resources/contribute.md) for more information on how to contribute.
+### 资源（Resources）
+- [贡献指南](docs/doc/resources/contribute.md)
 
-## Support
+### 其他
+- [常见问题](docs/faq/index.md)
 
-If you encounter any issues with the documentation or have questions, please:
+## 🤝 贡献指南
 
-1. Check the [FAQ](/en/faq/) section
-2. Open an issue in the [GitHub Issues](https://github.com/Cyrene2008/CyreneNameRoller-Docs/issues)
-3. Visit the [main project's issues](https://github.com/Cyrene2008/CyreneNameRoller/issues) for application-related questions
+欢迎贡献文档！请遵循以下步骤：
 
-## Acknowledgments
+1. Fork 本仓库
+2. 创建分支：`git checkout -b docs/some-feature`
+3. 提交更改：`git commit -m 'docs: add some feature'`
+4. 推送分支：`git push origin docs/some-feature`
+5. 提交 Pull Request
 
-This documentation project is built upon:
+### 文档规范
 
-- [VuePress](https://vuepress.vuejs.org/) - Vue-powered static site generator
-- [VuePress Theme Plume](https://github.com/pengzhanbo/vuepress-theme-plume) - Modern documentation theme
+- 使用清晰简洁的语言
+- 提供示例代码和截图
+- 保持中英文同步更新
+- 遵循现有的文档结构
+- 尊重原作者的署名
+
+### 版权声明
+
+当你贡献文档时，你同意：
+- 你的贡献将按照 CC BY-NC-SA 4.0 许可证发布
+- 你的贡献必须非商业性使用
+- 如果你修改了现有内容，必须保持相同的许可证
+- 你必须在修改的文档中添加适当的署名
+
+## 🛠 技术栈
+
+- **VuePress 2.0.0-rc.26**: 静态站点生成器
+- **vuepress-theme-plume 1.0.0-rc.190**: 文档主题
+- **Vite**: 构建工具
+- **pnpm**: 包管理器
+
+## 📮 反馈与支持
+
+- 提交 Issue: [GitHub Issues](https://github.com/Cyrene2008/CyreneNameRoller-Docs/issues)
+- 联系作者: 见 GitHub 主页
+
+## 🔗 相关链接
+
+- [CyreneNameRoller 主项目](https://github.com/Cyrene2008/CyreneNameRoller)
+- [线上版本](https://web点名器.昔涟.cn)
+- [VuePress 官方文档](https://vuepress.vuejs.org/)
+- [Plume 主题文档](https://theme-plume.vuejs.press/)
+- [Creative Commons 许可证](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ---
 
-**Note**: This repository contains only the documentation. For the actual application, please visit the [main project repository](https://github.com/Cyrene2008/CyreneNameRoller).
+*Made with ❤️ by LeafS825 & Cyrene2008 · Licensed under CC BY-NC-SA 4.0*
