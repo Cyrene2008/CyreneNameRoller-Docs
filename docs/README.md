@@ -5,16 +5,10 @@ config:
   -
     type: hero
     full: true
-    forceDark: true
-    effect: lightning
     hero:
       name: CyreneNameRoller
       tagline: 基于 Vue 3 + Electron 的随机点名桌面应用
-      text: |
-        CyreneNameRoller 是一个功能完善的随机点名桌面应用，
-        采用 Windows 11 Fluent Design 设计语言，提供流畅的用户体验。
-
-        支持 **随机点名**、**翻牌点名**、**智能平衡算法**、**数据统计** 等丰富功能。
+      text: 支持随机点名、翻牌点名、智能平衡算法、数据统计等丰富功能，采用 Windows 11 Fluent Design 设计语言。
       actions:
         -
           theme: brand
@@ -22,7 +16,7 @@ config:
           link: /guide/getting-started
         -
           theme: alt
-          text: 查看功能
+          text: 功能介绍
           link: /guide/features
         -
           theme: alt
@@ -52,71 +46,18 @@ config:
   -
     type: markdown
     content: |
-      ## 核心特性
-
-      ### 🎯 智能平衡算法
-      采用 **Fritsch-Carlson 单调三次 Hermite 插值算法**，确保点名公平性：
-      - 被抽中次数越少的人，下次概率越高
-      - 可视化曲线编辑器，直观调整算法参数
-      - 满足不同场景的平衡需求
-
-      ### 💾 数据双保险
-      Electron 文件系统 + localStorage 双写机制：
-      - 应用意外崩溃时自动恢复数据
-      - 支持数据导出备份
-      - 密码保护敏感操作
-
-      ### 🎨 Fluent Design
-      遵循 Windows 11 设计语言：
-      - 亚克力材质效果
-      - 光照效果
-      - 流畅动画过渡
-      - 响应式布局
-
       ## 快速开始
 
       \```bash
-      # 克隆仓库
       git clone https://github.com/Cyrene2008/CyreneNameRoller.git
       cd CyreneNameRoller
-
-      # 安装依赖
       pnpm install
-
-      # 启动开发环境
       pnpm dev
       pnpm electron:dev
-
-      # 构建 Electron 客户端
-      pnpm electron:build
       \```
 
-      ## 技术栈
+      完整安装和配置指南请查看 [开始使用](/guide/getting-started) 文档。
 
-      - **Vue 3** + **Vite** + **Electron**
-      - **Pinia** 状态管理
-      - **Vue Router** 路由（Hash 模式）
-      - **@iconify/vue** (Fluent UI Icons)
-      - **CSS 变量** + 自定义组件库
+      ---
 
-      ## 许可证
-
-      本文档采用 **CC BY-NC-SA 4.0**（署名-非商业性使用-相同方式共享 4.0 国际）许可证。
-
-      **您可以：**
-
-      - **共享** — 在任何媒介以任何形式复制和分发本材料
-      - **修改** — 转换、重做和基于本材料创建新作品
-
-      **需遵守以下条款：**
-
-      - **署名** — 您必须给出适当的署名，提供许可证链接，并标明是否进行了修改
-      - **非商业性使用** — 您不得将本材料用于商业目的
-      - **相同方式共享** — 如果您对材料进行重做、转换或基于其创作新作品，您必须基于相同的许可证分发您的贡献
-
-      ## 支持
-
-      - [GitHub](https://github.com/Cyrene2008/CyreneNameRoller)
-      - [更新日志](/changelog)
-      - [常见问题](/guide/faq)
-      - [开发指南](/guide/development)
+      📖 [项目介绍](/guide/intro) · [平衡算法](/guide/balance-algorithm) · [配置选项](/guide/configuration) · [常见问题](/guide/faq) · [更新日志](/changelog)

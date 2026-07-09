@@ -23,7 +23,7 @@ export default defineThemeConfig({
   appearance: true,  // 配置 深色模式
 
   social: [
-    { icon: 'github', link: 'https://github.com/Cyrene2008/CyreneNameRoller-Docs' },
+    { icon: 'github', link: 'https://github.com/Cyrene2008/CyreneNameRoller' },
   ],
 
   /**
