@@ -278,7 +278,14 @@ A: If your contribution is rejected, don't be discouraged. Maintainers will prov
 
 ## License
 
-Cyrene's Name Roller uses the GPL-3.0 license. For details, please查看 [LICENSE](https://github.com/Cyrene2008/CyreneNameRoller/blob/main/LICENSE) file.
+Cyrene's Name Roller uses the CC BY-NC-SA 4.0 license. For details, please查看 [LICENSE](https://github.com/Cyrene2008/CyreneNameRoller/blob/main/LICENSE) file.
+
+## Core Contributors
+
+- **Cyrene2008 (星海昔涟)** - Project Author & Main Maintainer
+  - GitHub: [@Cyrene2008](https://github.com/Cyrene2008)
+- **LeafS825 (叶背影)** - Contributor
+  - GitHub: [@LeafS825](https://github.com/LeafS825)
 
 ---
 

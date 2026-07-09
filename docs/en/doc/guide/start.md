@@ -7,23 +7,47 @@ description: How to get started with Cyrene's Name Roller
 
 ## System Requirements
 
-- **Operating System**: Windows 10/11
+### Tauri Version (Recommended)
+
+- **Operating System**: Windows 10 version 1803+ / Windows 11
+- **WebView2 Runtime**: Pre-installed on Windows 10 1803+ and Windows 11. For older systems, manually install [WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
+- **Screen Resolution**: Minimum 1200×900
 - **Memory**: At least 4GB RAM
-- **Storage**: At least 100MB available space
-- **Runtime**: Node.js 18+ (only for development)
+- **Storage**: At least 50MB available space
+
+### Electron Version
+
+- **Operating System**: Windows 10/11 (64-bit)
+- **Screen Resolution**: Minimum 1200×900
+- **Memory**: At least 4GB RAM
+- **Storage**: At least 150MB available space
+- **No additional runtime required**, Electron bundles Chromium
 
 ## Download and Install
 
-### Option 1: Download Executable (Recommended)
+### Option 1: Download Tauri Version (Recommended)
 
 1. **Download Latest Version**
-   - Download the latest version of CyreneNameRoller from [GitHub Releases](https://github.com/Cyrene2008/CyreneNameRoller/releases)
+   - Download `CyreneNameRoller-Tauri` installer from [GitHub Releases](https://github.com/Cyrene2008/CyreneNameRoller/releases)
 
-2. **Run Application**
-   - Double-click the executable to launch the application
-   - No installation required, just extract and use
+2. **Run Installer**
+   - Double-click the `.exe` installer and follow the prompts
+   - If WebView2 is missing, click the prompt link to download and install automatically
 
-### Option 2: Build from Source (Developers)
+### Option 2: Download Electron Version
+
+1. **Download Latest Version**
+   - Download `CyreneNameRoller` installer from [GitHub Releases](https://github.com/Cyrene2008/CyreneNameRoller/releases)
+
+2. **Run Installer**
+   - Double-click the `.exe` installer and follow the prompts
+   - No additional dependencies required, ready to use out of the box
+
+### Option 3: Online Version (No Installation)
+
+Visit [web点名器.昔涟.cn](https://web点名器.昔涟.cn) to use directly in your browser, no download required.
+
+### Option 4: Build from Source (Developers)
 
 1. **Clone Repository**
    ```bash

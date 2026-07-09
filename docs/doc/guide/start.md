@@ -7,23 +7,47 @@ description: 如何开始使用 Cyreneの随机点名器
 
 ## 系统要求
 
-- **操作系统**：Windows 10/11
+### Tauri 版本（推荐）
+
+- **操作系统**：Windows 10 版本 1803 及以上 / Windows 11
+- **WebView2 运行时**：Windows 10 1803+ 和 Windows 11 已预装，旧版系统需手动安装 [WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
+- **屏幕分辨率**：最低 1200×900
 - **内存**：至少 4GB RAM
-- **存储空间**：至少 100MB 可用空间
-- **运行环境**：Node.js 18+ (仅开发需要)
+- **存储空间**：至少 50MB 可用空间
+
+### Electron 版本
+
+- **操作系统**：Windows 10/11（64位）
+- **屏幕分辨率**：最低 1200×900
+- **内存**：至少 4GB RAM
+- **存储空间**：至少 150MB 可用空间
+- **无需额外运行时**，Electron 已内置 Chromium
 
 ## 下载与安装
 
-### 方案一：直接下载可执行文件(推荐)
+### 方案一：下载 Tauri 版本（推荐）
 
 1. **下载最新版本**
-   - 从 [GitHub Releases](https://github.com/Cyrene2008/CyreneNameRoller/releases) 页面下载最新版本的 CyreneNameRoller
+   - 从 [GitHub Releases](https://github.com/Cyrene2008/CyreneNameRoller/releases) 页面下载 `CyreneNameRoller-Tauri` 安装包
 
-2. **运行应用**
-   - 双击可执行文件启动应用程序
-   - 无需安装，解压即可使用
+2. **运行安装程序**
+   - 双击 `.exe` 安装包，按提示完成安装
+   - 如提示缺少 WebView2，点击提示中的链接自动下载安装
 
-### 方案二：从源代码编译(开发者)
+### 方案二：下载 Electron 版本
+
+1. **下载最新版本**
+   - 从 [GitHub Releases](https://github.com/Cyrene2008/CyreneNameRoller/releases) 页面下载 `CyreneNameRoller` 安装包
+
+2. **运行安装程序**
+   - 双击 `.exe` 安装包，按提示完成安装
+   - 无需额外依赖，开箱即用
+
+### 方案三：线上版本（无需安装）
+
+直接访问 [web点名器.昔涟.cn](https://web点名器.昔涟.cn) 即可在浏览器中使用，无需下载安装。
+
+### 方案四：从源代码编译（开发者）
 
 1. **克隆仓库**
    ```bash

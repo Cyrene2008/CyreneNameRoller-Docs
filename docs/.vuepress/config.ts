@@ -8,7 +8,7 @@ export default defineUserConfig({
   base: '/',
   lang: 'zh-CN',
   title: 'Cyreneの随机点名器',
-  description: '基于 Vue 3 + Electron 的随机点名桌面应用，采用 Windows 11 Fluent Design 设计语言',
+      description: '基于 Vue 3 + Tauri/Electron 的随机点名桌面应用，采用 Windows 11 Fluent Design 设计语言',
 
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/images/Cyrene.png' }],
@@ -21,19 +21,19 @@ export default defineUserConfig({
     '/': {
       lang: 'zh-CN',
       title: 'Cyreneの随机点名器',
-      description: '基于 Vue 3 + Electron 的随机点名桌面应用，采用 Windows 11 Fluent Design 设计语言',
+  description: '基于 Vue 3 + Tauri/Electron 的随机点名桌面应用，采用 Windows 11 Fluent Design 设计语言',
     },
     '/en/': {
       lang: 'en-US',
       title: 'Cyrene\'s Name Roller',
-      description: 'A random name picker desktop app based on Vue 3 + Electron with Windows 11 Fluent Design',
+      description: 'A random name picker desktop app based on Vue 3 + Tauri/Electron with Windows 11 Fluent Design',
     },
   },
 
 
 
   theme: plumeTheme({
-    hostname: 'https://nameroller.昔涟.cn/',
+    hostname: 'https://点名器.昔涟.cn/',
 
     docsRepo: 'https://github.com/Cyrene2008/CyreneNameRoller-Docs',
     docsDir: 'docs',
