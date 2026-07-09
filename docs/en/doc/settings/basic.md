@@ -5,147 +5,152 @@ description: Basic settings options for Cyrene's Name Roller
 
 # Basic Settings
 
-This section introduces the basic settings options for Cyrene's Name Roller.
+This section introduces all configurable options for Cyrene's Name Roller. All settings are modified in the "Settings" page and take effect immediately.
 
-## Personalization Settings
+## Basic Settings
+
+### Language Switch
+
+Switch the interface display language:
+
+- **Chinese**: Default language
+- **English**: English interface
+
+Toggle: Click the language switch to toggle instantly, no restart required. Affects all interface text including menus, buttons, and prompts.
+
+### Dark Mode
+
+Switch between dark/light themes:
+
+- **Light Mode**: Suitable for daytime or bright environments
+- **Dark Mode**: Suitable for night or low-light environments
+
+Toggle: Click the dark mode switch to toggle instantly.
+
+## Theme & Display
+
+### Name Color Mode
+
+Control the display color of names in picking results:
+
+- **Gradient Mode** (default): Names display with rainbow gradient colors, vibrant and lively
+- **Custom Solid Color**: Use custom color to display names
+
+When "Custom Solid Color" is selected, you can set separate colors for light and dark modes:
+
+- **Light Mode Color**: Customize via color picker
+- **Dark Mode Color**: Customize via color picker
 
 ### UI Scaling
 
 Adjust the overall interface size to adapt to different screen resolutions:
 
-- **Scaling Range**: 75% - 200%
-- **Adjustment Method**: Drag the slider or enter a value
-- **Real-time Preview**: Real-time preview while adjusting
-- **Save Settings**: Click "Apply" button to save settings
+- **Available Values**: 75%, 100% (default), 125%, 150%, 175%, 200%
+- **Implementation**: CSS scaling, all interface elements scale proportionally
 
-### Font Settings
+### Name Font Size
 
-Adjust the name display font size:
+Adjust the display size of names in picking results:
 
-- **Font Size**: 12px - 48px
-- **Preview Effect**: View font size effect in preview area
-- **Save Settings**: Click "Apply" button to save settings
+- **Available Values**: 0.75x, 1.0x (default), 1.25x, 1.5x, 1.75x, 2.0x
+- **Only Affects**: The name text size in the picking result area, not other interface elements
 
-### Theme Switching
+## Performance Settings
 
-Switch between dark/light modes:
+The following settings optimize runtime smoothness on low-performance devices:
 
-- **Light Mode**: Suitable for daytime or bright environments
-- **Dark Mode**: Suitable for night or low-light environments
-- **Follow System**: Automatically follow system theme settings
-- **Switching Method**: Click the theme toggle button
+### Acrylic Blur
 
-### Language Switching
+Control the frosted glass blur effect on the interface background:
 
-Switch interface language:
+- **On**: Interface background displays Windows 11 style acrylic blur effect
+- **Off**: Disable blur effect to improve smoothness on low-performance devices
 
-- **Simplified Chinese**: Chinese interface
-- **English**: English interface
-- **Switching Steps**:
-  1. Click the "Language" dropdown menu in the settings interface
-  2. Select the desired language
-  3. Click "Apply" button
-  4. Interface language switches immediately, no restart required
+### Shadow Effects
 
-## Function Settings
+Control shadows on cards and buttons:
 
-### Balanced Algorithm
+- **On**: Interface elements display shadow effects, enhancing depth
+- **Off**: Disable shadow effects to reduce rendering load
+
+### Transition Animations
+
+Control page switching and element transition animations:
+
+- **On**: Page switching displays slide transition animations
+- **Off**: Disable transition animations, pages switch directly, improving response speed
+
+## Data Management
+
+### Enable Data Statistics
+
+Control whether to record extraction statistics:
+
+- **On** (default): Automatically record pick counts and probability distribution
+- **Off**: Stop recording statistics, existing statistics are preserved but no longer updated
+
+### Data Operation Password
+
+Set a password to protect sensitive data operations:
+
+- **Protected Operations**: Data export, data import, clear records, clear all data
+- **Encryption Method**: Password stored as SHA-256 hash, irreversible
+- **Three Modes**:
+  - **Set Password**: Set password for the first time
+  - **Change Password**: Verify old password first, then set new password
+  - **Verify Password**: Verify when performing protected operations
+
+### Data Export
+
+Export all data as a `.cyrene` file (JSON format):
+
+- **Contains**: Settings, lists, statistics, records, balance algorithm configuration, password hash
+- **Requires password verification**
+
+### Data Import
+
+Import data from a `.cyrene` file:
+
+- **Warning**: Import will overwrite all current data
+- **Requires password verification**
+- **Manual restart required after import**
+
+### Clear Records
+
+Clear all extraction records:
+
+- **Requires password verification**
+- **Does not affect** lists and statistics
+
+### Clear All
+
+Clear all data and restore default settings:
+
+- **Requires password verification**
+- **Irreversible**, please confirm before operation
+
+## Balance Algorithm
+
+### Enable Balance Algorithm
 
 Control the fairness of random picking:
 
-- **Enable Balanced Algorithm**: Fewer picks result in higher probability
-- **Disable Balanced Algorithm**: Completely random, same probability each time
-- **Algorithm Description**: Balanced algorithm ensures that over time, each student is picked roughly the same number of times
-- **Applicable Scenarios**: Recommended for teaching scenarios, can be disabled for game scenarios
+- **On**: Use balance algorithm, fewer picks result in higher probability
+- **Off**: Completely random picking, same probability each time
 
-### English Mode
+### Curve Editor
 
-Switch English display mode:
+Customize the probability adjustment curve of the balance algorithm:
 
-- **Enable English Mode**: All interface elements display in English
-- **Disable English Mode**: Display Chinese interface
-- **Scope of Impact**: Includes menus, buttons, prompts, etc.
-- **Independent Settings**: Independent of language settings, can use Chinese interface with English list display simultaneously
+- **Visual Editing**: Drag 3 control points on the Canvas to adjust curve shape
+- **Algorithm**: Based on Fritsch-Carlson monotone Hermite cubic interpolation
+- **How It Works**: Calculate each student's "deficit" (expected count - actual count), larger deficit means higher probability boost
+- **Default Parameters**:
+  - `factor`: 13.3
+  - `maxThreshold`: 3
+  - `maxBoostPercent`: 1200%
+- **Statistics Display**: The statistics page displays both "Original Probability" and "Balanced Probability" columns
 
-### Animation Effects
+## Update Log
 
-Control picking animations:
-
-- **Rainbow Name Animation**: Picking results display with rainbow gradient colors
-- **Card Flip Animation**: 3D flip effect for card flip name picking
-- **Disable Animations**: Disable all animation effects to improve performance
-- **Animation Speed**: Adjust animation playback speed (Slow/Medium/Fast)
-
-### Sound Settings
-
-Control picking sound effects:
-
-- **Enable Sound Effects**: Play sound effects during picking
-- **Disable Sound Effects**: Silent mode
-- **Volume Control**: Adjust sound effect volume
-- **Sound Effect Selection**: Select different sound effect files
-
-## Data Settings
-
-### Storage Location
-
-Set data storage location:
-
-- **Default Location**: data folder in the application directory
-- **Custom Location**: Select other folders as storage location
-- **Migrate Data**: Migrate existing data to new location
-- **Backup Location**: Set automatic backup storage location
-
-### Automatic Backup
-
-Configure automatic backup function:
-
-- **Enable Automatic Backup**: Automatically backup data regularly
-- **Backup Frequency**: Daily/Weekly/Monthly
-- **Backup Retention**: How many recent backups to keep
-- **Backup Content**: Select which data to backup (lists, records, settings)
-
-### Data Cleaning
-
-Clean unnecessary data:
-
-- **Clean Cache**: Clean temporary files and cache
-- **Clean Records**: Delete old pick records
-- **Clean Lists**: Delete unused lists
-- **Secure Delete**: Permanently delete data after confirmation
-
-## Advanced Settings
-
-### Performance Optimization
-
-Adjust performance-related settings:
-
-- **Hardware Acceleration**: Enable/disable GPU acceleration
-- **Memory Limit**: Set application memory usage limit
-- **Background Running**: Continue running when minimized
-- **Startup Options**: Set auto-start on boot
-
-### Keyboard Shortcut Configuration
-
-Customize keyboard shortcuts:
-
-- **Default Shortcuts**: Restore default keyboard shortcut settings
-- **Custom Shortcuts**: Set keyboard shortcuts for commonly used functions
-- **Shortcut Conflicts**: Detect and resolve keyboard shortcut conflicts
-- **Export Configuration**: Export keyboard shortcut configuration file
-
-### Update Settings
-
-Configure application updates:
-
-- **Auto-check Updates**: Automatically check for new versions on startup
-- **Update Channel**: Stable/Beta
-- **Download Updates**: Automatically download update packages
-- **Install Updates**: Prompt to install updates
-
-## Notes
-
-- Some settings require restarting the application to take effect
-- Settings are automatically saved in local storage
-- It is recommended to regularly backup settings and data
-- Before modifying settings, it is recommended to understand the function of each option
+The bottom of the settings page displays the application's version update history, loaded from the `up.json` file.

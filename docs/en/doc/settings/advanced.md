@@ -1,198 +1,134 @@
 ---
 title: Advanced Settings
-description: Advanced settings options for Cyrene's Name Roller
+description: Advanced settings and technical details for Cyrene's Name Roller
 ---
 
 # Advanced Settings
 
-## Developer Settings
+## Data Storage Architecture
 
-### Development Mode
+The application automatically selects the storage method based on the runtime environment:
 
-Enable developer mode for debugging and development:
+### Tauri Version
 
-- **Enable Developer Mode**: Display developer tools and debugging options
-- **Developer Tools**: Open Chrome DevTools for debugging
-- **Console Logs**: View application log output
-- **Performance Analysis**: Analyze application performance
+Data is stored as independent JSON files in the `data/` directory, read and written through the Rust backend. Storage keys include:
 
-### Debugging Options
+- `settings`: User settings
+- `lists`: List data
+- `currentListId`: Currently selected list ID
+- `statistics`: Statistics data
+- `records`: Extraction records
+- `balance`: Balance algorithm configuration
+- `password`: Password hash
+- `cardTrayHistory`: Card flip tray history
+- `cardUsedNames`: Card flip used names
+- `cardSettings`: Card flip settings
 
-Configure debugging-related settings:
+### Electron Version
 
-- **Verbose Logging**: Enable detailed logging
-- **Error Reporting**: Automatically send error reports
-- **Debug Port**: Set remote debugging port
-- **Memory Snapshots**: Capture memory snapshots for analysis
+Uses the `electron-store` package for data persistence, stored in the user data directory.
 
-## Performance Optimization
+### Browser Version (Online)
 
-### Hardware Acceleration
+Uses `localStorage` for data storage, saved in the browser locally.
 
-Configure GPU acceleration:
+## List Management Advanced Features
 
-- **Enable Hardware Acceleration**: Use GPU to accelerate interface rendering
-- **Disable Hardware Acceleration**: Use CPU rendering to resolve compatibility issues
-- **Auto Select**: Automatically select based on system configuration
-- **Force Enable**: Enable even on unsupported hardware
+### Whitelist Mechanism
 
-### Memory Management
+The system has a built-in non-editable whitelist:
 
-Optimize memory usage:
+- **Content**: `Again!` (English) / `再来一次` (Chinese)
+- **Purpose**: Whitelist members are protected from batch deletion
+- **Display**: Shown with special markers in the list management page
 
-- **Memory Limit**: Set maximum application memory usage
-- **Garbage Collection**: Manually trigger garbage collection
-- **Memory Monitoring**: Real-time monitoring of memory usage
-- **Memory Leak Detection**: Detect potential memory leaks
+### List Import/Export
 
-### Startup Optimization
+#### List Export
 
-Optimize application startup speed:
+- **Format**: `.json` file
+- **Content**: Single list data (name + member list)
+- **Location**: List management page
+- **No password verification required**
 
-- **Preloading**: Preload commonly used resources
-- **Lazy Loading**: Delay loading of non-critical resources
-- **Cache Strategy**: Configure resource caching strategy
-- **Startup Item Management**: Manage auto-start items
+#### List Import
 
-## Data Management Advanced Options
+- **Format**: `.json` file
+- **Location**: List management page
+- **No password verification required**
+- **Note**: Import adds as a new list, does not affect existing lists
 
-### Database Configuration
+## Card Flip Advanced Configuration
 
-Configure local database:
+### Card Count
 
-- **Database Engine**: Select database engine (SQLite/IndexedDB)
-- **Index Optimization**: Optimize database indexes
-- **Query Optimization**: Optimize database query performance
-- **Database Maintenance**: Regular database maintenance
+Configurable number of cards in card flip mode, affecting the number of cards dealt each time.
 
-### Import/Export Advanced Options
+### Quick Draw Count
 
-Advanced data import/export functions:
+Configuration for the number of picks in the one-click multiple function.
 
-- **Batch Import**: Batch import data from multiple formats
-- **Custom Export**: Customize export format and fields
-- **Data Mapping**: Configure data field mapping
-- **Error Handling**: Configure import/export error handling strategy
+### Tray History Persistence
 
-### Data Synchronization
+Card flip mode's tray history and used names are automatically persisted, allowing recovery of the previous state after closing and reopening the application.
 
-Configure data synchronization:
+## Balance Algorithm Technical Details
 
-- **Local Sync**: Sync data between multiple local devices
-- **Cloud Sync**: Sync data to cloud storage (experimental)
-- **Conflict Resolution**: Configure data conflict resolution strategy
-- **Sync Frequency**: Set automatic sync frequency
+### Algorithm Principle
 
-## Network Configuration
+The balance algorithm works through the following steps:
 
-### Proxy Settings
+1. **Calculate Deficit**: For each student, calculate `deficit = expected pick count - actual pick count`
+2. **Probability Boost Calculation**: Find the corresponding probability boost percentage on the balance curve based on the deficit value
+3. **Weighted Random**: Use the boosted probability for weighted random selection
 
-Configure network proxy:
+### Interpolation Method
 
-- **HTTP Proxy**: Configure HTTP proxy server
-- **SOCKS Proxy**: Configure SOCKS proxy server
-- **Proxy Authentication**: Configure proxy authentication information
-- **Bypass List**: Configure addresses that don't use proxy
+Uses Fritsch-Carlson monotone Hermite cubic interpolation for smooth transitions between 3 control points, ensuring the curve is monotonically increasing.
 
-### Update Configuration
+### Default Control Points
 
-Configure application updates:
+| Control Point | X (Deficit) | Y (Probability Boost%) |
+|---------------|-------------|------------------------|
+| Point 1       | 0.3         | 150%                   |
+| Point 2       | 1.5         | 420%                   |
+| Point 3       | 2.4         | 800%                   |
 
-- **Update Server**: Configure custom update server
-- **Update Channel**: Select update channel (Stable/Beta/Development)
-- **Auto Update**: Configure automatic update behavior
-- **Update Verification**: Verify update package integrity and security
+### Parameter Description
 
-## Security Settings
+- `factor` (13.3): Base weight factor
+- `maxThreshold` (3): Maximum deficit threshold
+- `maxBoostPercent` (1200%): Maximum probability boost cap
 
-### Data Encryption
+## Data Operation Security
 
-Configure data encryption:
+### Password Protection Mechanism
 
-- **Encryption Algorithm**: Select encryption algorithm (AES-256/ChaCha20)
-- **Key Management**: Manage encryption keys
-- **Encryption Scope**: Select which data to encrypt
-- **Encryption Strength**: Configure encryption strength
+- **Hash Algorithm**: SHA-256
+- **Storage Method**: Only stores hash value, not plaintext password
+- **Protected Scope**: Data export, data import, clear records, clear all
+- **Not Protected**: List editing, settings modification, daily use
 
-### Access Control
+### Data Import Notes
 
-Configure access control:
+- Import will **overwrite** all current data
+- Manual **restart** required after import
+- Recommended to export current data as backup before importing
 
-- **Password Protection**: Set application access password
-- **Permission Management**: Manage different user access permissions
-- **Session Management**: Configure session timeout and lock
-- **Audit Logs**: Record access and operation logs
+## Performance Optimization Tips
 
-### Privacy Protection
+### Low-Performance Devices
 
-Configure privacy protection:
+On low-performance devices, it is recommended to disable the following effects for smoother operation:
 
-- **Data Anonymization**: Anonymize sensitive data processing
-- **Privacy Policy**: Configure privacy protection policies
-- **Data Retention**: Configure data retention periods
-- **Data Deletion**: Securely delete sensitive data
+- Acrylic blur effect
+- Shadow effects
+- Transition animations
 
-## System Integration
+### Large Lists
 
-### Keyboard Shortcut Configuration
+When a list contains many members:
 
-Customize system shortcuts:
-
-- **Global Shortcuts**: Configure system-level shortcuts
-- **Shortcut Mapping**: Map different shortcut combinations
-- **Shortcut Conflicts**: Detect and resolve shortcut conflicts
-- **Shortcut Export**: Export shortcut configuration
-
-### System Tray
-
-Configure system tray behavior:
-
-- **Minimize to Tray**: Minimize to system tray when closing window
-- **Tray Menu**: Configure tray right-click menu
-- **Notification Settings**: Configure tray notifications
-- **Startup Behavior**: Configure whether to show tray icon on startup
-
-### File Association
-
-Configure file associations:
-
-- **Associate File Types**: Associate specific file types
-- **Right-click Menu**: Add right-click menu options
-- **Default Program**: Set as default program
-- **File Icons**: Configure file icons
-
-## Troubleshooting
-
-### Advanced Diagnostics
-
-Use advanced diagnostic tools:
-
-- **System Information**: Collect system information for troubleshooting
-- **Log Analysis**: Analyze application logs
-- **Performance Analysis**: Analyze application performance
-- **Network Diagnostics**: Diagnose network connection issues
-
-### Reset Options
-
-Reset application settings:
-
-- **Reset Settings**: Reset all settings to default values
-- **Reset Data**: Reset all data (use with caution)
-- **Reset Cache**: Clear all cached data
-- **Complete Reset**: Completely reset application
-
-### Compatibility Settings
-
-Configure compatibility options:
-
-- **Compatibility Mode**: Run application in compatibility mode
-- **DPI Settings**: Configure high DPI support
-- **Graphics Backend**: Select graphics rendering backend
-- **Rendering Mode**: Configure rendering mode
-
-## Notes
-
-- Advanced settings may affect application stability
-- It is recommended to backup data before modifying advanced settings
-- Some settings require restarting the application to take effect
-- For unfamiliar settings, it is recommended to keep default values
+- Balance algorithm computation time increases accordingly
+- Statistics page rendering may slow down
+- Recommended to keep the number of members per list reasonable

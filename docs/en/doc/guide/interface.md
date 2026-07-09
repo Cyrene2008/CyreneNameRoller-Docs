@@ -5,78 +5,139 @@ description: Introduction to Cyrene's Name Roller interface layout and features
 
 # Interface Introduction
 
-Cyrene's Name Roller uses Windows 11 Fluent Design language, with a clean and modern interface that is intuitive to use. This document will详细介绍 the various interface components of the software.
+Cyrene's Name Roller uses Windows 11 Fluent Design language, with a clean and modern interface that is intuitive to use. This document will introduce the various interface components of the software in detail.
 
 ## Main Interface Layout
 
-The main interface uses a side navigation bar design, containing the following main parts:
+The main interface uses a left navigation bar design, containing the following main parts:
 
-### 1. Side Navigation Bar
+### 1. Left Navigation Bar
 
-The side navigation bar is located on the left side of the window, containing the following function tabs:
+The navigation bar is located on the left side of the window, containing the following page entries:
 
 - **Random Name**: Core random picking functionality
 - **Card Flip**: 3D card flip animation name picking
-- **Data Management**: View statistics, pick records, and list management
+- **Statistics**: View pick counts and probability distribution
+- **Records**: View historical pick records
+- **List Management**: Manage lists and members
 - **Settings**: Personalization configuration options
+- **About**: Application information
 
-### 2. Top Title Bar
+The navigation bar supports collapse/expand toggle, showing only icons when collapsed.
 
-Displays the software name and window control buttons (minimize, maximize/restore, close).
+### 2. Custom Title Bar
+
+The application uses a custom title bar (no system title bar), containing:
+
+- Application name display
+- Window control buttons: Minimize, Maximize/Restore, Close
 
 ### 3. Main Content Area
 
-Displays different function interfaces based on the selected tab.
+Displays different function interfaces based on the selected page. Page switching includes slide transition animations (can be disabled in settings).
 
-## Function Interface Details
+## Function Page Details
 
-### Random Name Interface
+### Random Name Page
 
 Core random picking functionality:
 
-- **Mode Selection**: Single mode / Multiple mode
+- **Mode Toggle**: Single mode / Multiple mode
+- **Count Adjustment**: In multiple mode, set the number of people to pick (2 to list size limit)
+- **No Repeat**: Toggle control whether the same person can be picked multiple times
+- **English Mode**: Switch between Chinese name/English name display
+- **List Selection**: Dropdown menu to select different lists
 - **Start Button**: Start random picking
-- **Result Display Area**: Display picking results with rainbow name animation
-- **History Record**: Display recent picking records
-- **List Selection**: Select different lists for picking
+- **Result Display Area**: Display picking results, supports gradient name animation and scale emphasis animation
 
-### Card Flip Name Picking Interface
+### Card Flip Page
 
 Card flip name picking with 3D animation:
 
-- **Pick Count**: Set the number of people to pick at once
-- **One-click Multiple**: Automatic shuffle + flip
-- **Card Display Area**: Display cards, click to flip and view results
-- **Card History**: View historical picking records
-- **List Switching**: Real-time list switching
+- **English Mode**: Switch between Chinese name/English name display
+- **List Selection**: Dropdown menu to select different lists
+- **Shuffle Button**: Deal cards, place cards face down
+- **Quick Pick**: One-click complete shuffle + flip
+- **Reset Button**: Clear card face, start over
+- **Card Area**: Display cards, click to flip and view results
+- **Card History**: Bottom area displays flipped card records
 
-### Data Management Interface
+### Statistics Page
 
-Data statistics and management features:
+Data statistics and visualization:
 
-- **Statistics Panel**:
-  - Pick count statistics
-  - Probability distribution
-  - Balanced probability display
-- **Pick Records**:
-  - Name, list, source, time
-  - Support filtering and search
-- **List Management**:
-  - List CRUD (Create, Read, Update, Delete)
-  - Batch delete (10-second undo protection)
-  - Import/Export functionality
-- **Data Security**: SHA-256 password protection
+- **Total Pick Count**: Total picks across all lists
+- **Candidate Count**: Total number of people in current list
+- **Statistics List**:
+  - Each student's name
+  - Pick count
+  - Original probability
+  - Balanced probability (displayed when balance algorithm is enabled)
+  - Sorted descending by pick count
 
-### Settings Interface
+### Records Page
 
-Personalization configuration options:
+View historical pick records:
 
-- **UI Scaling**: Adjust interface size (75%-200%)
-- **Font Settings**: Adjust name font size
-- **Theme Switching**: Dark mode / Light mode
-- **Language Switching**: Chinese / English
-- **Balanced Algorithm**: Enable/disable algorithm where fewer picks result in higher probability
-- **English Mode**: Switch English display mode
+- **Record List**: Display all pick records
+- **Record Fields**:
+  - Time: Pick time (friendly format display)
+  - Name: Picked student's name
+  - List: List name
+  - Source: "Random Name" or "Card Flip"
+- **Record Limit**: Maximum 500 records saved
+
+### List Management Page
+
+List and member management:
+
+- **List Switching**: Left sidebar displays all lists, click to switch
+- **Add List**: Create new lists
+- **List Operations**: Rename, delete
+- **Member List**: Display all members in current list
+- **Add Member**: Enter Chinese name and English name
+- **Edit Member**: Modify member information
+- **Delete Member**: Single delete or batch delete
+- **Batch Operations**: Select all, batch delete (10-second undo protection)
+- **Import/Export**: Import/export list as `.json` file
+- **Whitelist Marking**: Whitelist members display special markers, cannot be deleted
+
+### Settings Page
+
+Personalization configuration options, divided into the following sections:
+
+- **Basic Settings**: Language switch, dark mode
+- **Theme & Display**: Name color mode, UI scaling, name font size
+- **Performance Settings**: Acrylic blur, shadow effects, transition animations
+- **Data Management**: Enable data statistics, data operation password, data export/import/clear
+- **Balance Algorithm**: Enable toggle, curve editor
+- **Update Log**: Version update history
+
+### About Page
+
+Display basic application information:
+
+- Application name and version
+- Application description
+- Author information (Cyrene2008)
+- GitHub repository link
+- License information (GPL v3.0)
+- Copyright notice
+- ICP filing number
+
+## UI Components
+
+The application uses custom Fluent Design components:
+
+- **FluentButton**: Button component, supports primary/secondary/subtle/danger variants, sm/md/lg sizes
+- **FluentCard**: Frosted glass card container
+- **FluentIcon**: Fluent icons based on @iconify/vue
+- **FluentInput**: Input field, supports prefix/suffix slots
+- **FluentModal**: Modal dialog, supports persistent mode
+- **FluentSelect**: Dropdown selector
+- **FluentToast**: Bottom-right notification, supports action buttons
+- **FluentToggle**: Toggle switch
+- **BalanceEditor**: Balance curve editor, Canvas rendering, draggable control points
 
 ## Interface Operation Tips
 
@@ -84,44 +145,19 @@ Personalization configuration options:
 
 1. **Quick Picking**: Click the "Start" button directly in the random name interface
 2. **Multiple Mode**: Switch to multiple mode and set the number of people to pick
-3. **View History**: Click history records to view previous picking results
-4. **Switch Lists**: Select different lists from the list selection dropdown
+3. **Switch Lists**: Select different lists from the list selection dropdown
+4. **No Repeat**: Enable to ensure each person is picked only once
 
 ### Card Flip Name Picking Operations
 
-1. **Set Count**: Set the number of people to pick in the card flip interface
-2. **One-click Picking**: Click the "One-click Multiple" button for batch picking
-3. **Flip Cards**: Click cards to view picking results
-4. **View History**: Click "Card History" to view historical records
+1. **Manual Flip**: Click "Shuffle" to deal cards, click cards one by one to flip
+2. **Quick Pick**: Click "Quick Pick" button for one-click completion
+3. **Switch Lists**: Select different lists from the list selection dropdown
+4. **Reset Cards**: Click "Reset" button to clear the card face
 
 ### Data Management Operations
 
-1. **View Statistics**: View pick counts and probabilities in the data management interface
-2. **Filter Records**: Use filter functions to find specific records
-3. **Manage Lists**: Click "List Management" to perform list CRUD operations
+1. **View Statistics**: View pick counts and probabilities in the statistics page
+2. **View Records**: View historical records in the records page
+3. **Manage Lists**: Perform list CRUD operations in the list management page
 4. **Import/Export**: Use import/export functions to backup list data
-
-### Settings Operations
-
-1. **Adjust Scaling**: Drag the UI scaling slider to adjust interface size
-2. **Switch Theme**: Click the dark/light mode toggle button
-3. **Change Language**: Select language from the language dropdown menu
-4. **Balanced Algorithm**: Check/uncheck the balanced algorithm option
-
-## Troubleshooting
-
-### Display Issues
-
-If you encounter display issues, try the following solutions:
-
-1. **Adjust Scaling**: Adjust the UI scaling ratio in settings
-2. **Restart Application**: Close and restart the application
-3. **Update Graphics Driver**: Ensure your graphics driver is up to date
-
-### Data Loss Issues
-
-If you encounter data loss, try the following methods:
-
-1. **Check Backups**: Look for exported list backups
-2. **View Records**: Search for historical data in pick records
-3. **Contact Support**: If unresolved, visit GitHub Issues for help
