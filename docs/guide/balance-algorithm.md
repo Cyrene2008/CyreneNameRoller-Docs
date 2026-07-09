@@ -180,3 +180,7 @@ Fritsch-Carlson 方法确保插值曲线的**单调性**：
 
 - [Fritsch, F. N., & Carlson, R. E. (1980). Monotone piecewise cubic interpolation. SIAM Journal on Numerical Analysis.](https://doi.org/10.1137/0717021)
 - [Hermite interpolation - Wikipedia](https://en.wikipedia.org/wiki/Hermite_interpolation)
+
+## 许可证
+
+本文档采用 **CC BY-NC-SA 4.0**（署名-非商业性使用-相同方式共享 4.0 国际）许可证。详见 [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/) 文件。

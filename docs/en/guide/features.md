@@ -1,6 +1,6 @@
 ---
 title: Features
-description:深入了解 CyreneNameRoller 的各项功能
+description: Detailed explanation of CyreneNameRoller's features
 ---
 
 # Features
@@ -223,7 +223,7 @@ View app update history and version information.
 ### App Info
 - App Name: CyreneNameRoller
 - Current Version: 26.0.0
-- License: GPL-3.0
+- License: CC BY-NC-SA 4.0
 
 ### Author Info
 - Author: Cyrene2008
@@ -235,7 +235,7 @@ View app update history and version information.
 - Email: See GitHub profile
 
 ### Open Source License
-This project is licensed under GPL-3.0. See [LICENSE](https://github.com/Cyrene2008/CyreneNameRoller/blob/main/LICENSE) file.
+This documentation is licensed under **CC BY-NC-SA 4.0**. See [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/) file.
 
 ## Keyboard Shortcuts
 
@@ -283,3 +283,7 @@ This project is licensed under GPL-3.0. See [LICENSE](https://github.com/Cyrene2
 ### Performance Optimization
 - Disabling rainbow animation and particle effects improves performance
 - On low-performance devices, consider disabling blur effects
+
+## License
+
+This documentation is licensed under **CC BY-NC-SA 4.0**. See [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/) for details.

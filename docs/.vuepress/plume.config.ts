@@ -23,34 +23,22 @@ export default defineThemeConfig({
   appearance: true,  // 配置 深色模式
 
   social: [
-    { icon: 'github', link: '/' },
+    { icon: 'github', link: 'https://github.com/Cyrene2008/CyreneNameRoller-Docs' },
   ],
-  // navbarSocialInclude: ['github'], // 允许显示在导航栏的 social 社交链接
-  // aside: true, // 页内侧边栏， 默认显示在右侧
-  // outline: [2, 3], // 页内大纲， 默认显示 h2, h3
 
   /**
    * 文章版权信息
    * @see https://theme-plume.vuejs.press/guide/features/copyright/
    */
-  // copyright: true,
+  copyright: true,
 
-  // prevPage: true,   // 是否启用上一页链接
-  // nextPage: true,   // 是否启用下一页链接
-  // createTime: true, // 是否显示文章创建时间
-
-  /* 站点页脚 */
-  // footer: {
-  //   message: 'Power by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> & <a target="_blank" href="https://theme-plume.vuejs.press">vuepress-theme-plume</a>',
-  //   copyright: '',
-  // },
-
-  /* 过渡动画 @see https://theme-plume.vuejs.press/config/theme/#transition */
-  // transition: {
-  //   page: true,        // 启用 页面间跳转过渡动画
-  //   postList: true,    // 启用 博客文章列表过渡动画
-  //   appearance: 'fade',  // 启用 深色模式切换过渡动画, 或配置过渡动画类型
-  // },
+  /**
+   * 站点页脚
+   */
+  footer: {
+    message: 'Power by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> & <a target="_blank" href="https://theme-plume.vuejs.press">vuepress-theme-plume</a>',
+    copyright: 'Licensed under <a rel="noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>',
+  },
 
   locales: {
     '/': {
@@ -87,7 +75,7 @@ export default defineThemeConfig({
       profile: {
         avatar: 'https://theme-plume.vuejs.press/plume.png',
         name: 'CyreneNameRoller',
-        description: 'CyreneNameRoller 应用文档',
+        description: 'CyreneNameRoller Documentation',
         // circle: true,
         // location: '',
         // organization: '',
@@ -108,4 +96,118 @@ export default defineThemeConfig({
        // },
     },
   },
+
+  /**
+   * 博客配置
+   * @see https://theme-plume.vuejs.press/config/theme/#blog
+   */
+  blog: {
+    // description: 'Blog description',
+    // medias: ['bilibili', 'zhihu', 'juejin', 'twitter'],
+    // avatar: 'https://theme-plume.vuejs.press/plume.png',
+    // name: '博主名称',
+    // location: '博主所在地区',
+    // organization: '博主所属组织',
+    // intro: '博主简介，支持 HTML',
+  },
+
+  /**
+   * 评论配置
+   * @see https://theme-plume.vuejs.press/guide/features/comment/
+   */
+  // comment: {
+  //   provider: 'giscus',
+  //   options: {
+  //     repo: '',
+  //     repoId: '',
+  //     category: '',
+  //     categoryId: '',
+  //     mapping: 'pathname',
+  //     strict: false,
+  //     reactionsEnabled: true,
+  //     lazyLoading: true,
+  //   },
+  // },
+
+  /**
+   * 编辑链接
+   * @see https://theme-plume.vuejs.press/config/theme/#editlink
+   */
+  // editLink: true,
+  // docsRepo: 'Cyrene2008/CyreneNameRoller-Docs',
+  // docsDir: 'docs',
+  // docsBranch: 'main',
+  // editLinkText: '编辑此页',
+
+  /**
+   * 最后更新
+   * @see https://theme-plume.vuejs.press/config/theme/#lastupdated
+   */
+  // lastUpdated: true,
+  // lastUpdatedText: '最后更新',
+  // contributors: true,
+  // contributorsText: '贡献者',
+
+  /**
+   * 代码高亮
+   * @see https://theme-plume.vuejs.press/config/plugins/code-highlight/
+   */
+  // codeHighlighter: {
+  //   twoslash: true, // 启用 twoslash
+  //   whitespace: true, // 启用 空格/Tab 高亮
+  //   lineNumbers: true, // 启用行号
+  // },
+
+  /**
+   * 阅读时间
+   * @see https://theme-plume.vuejs.press/config/theme/#readingtime
+   */
+  // readingTime: true,
+
+  /**
+   * 文章信息
+   * @see https://theme-plume.vuejs.press/config/theme/#article
+   */
+  // article: true,
+
+  /**
+   * 侧边栏 @see https://theme-plume.vuejs.press/config/theme/#sidebar
+   */
+  // aside: true, // 页内侧边栏， 默认显示在右侧
+  // outline: [2, 3], // 页内大纲， 默认显示 h2, h3
+
+  /**
+   * 上一页 下一页
+   * @see https://theme-plume.vuejs.press/config/theme/#nav
+   */
+  // prevPage: true,   // 是否启用上一页链接
+  // nextPage: true,   // 是否启用下一页链接
+
+  /**
+   * 外链图标
+   * @see https://theme-plume.vuejs.press/config/theme/#externalLinkIcon
+   */
+  // externalLinkIcon: true,
+
+  /**
+   * 非禁用主题配色
+   * @see https://theme-plume.vuejs.press/config/theme/#themeColorPresets
+   */
+  // themeColorPresets: ['default', 'green', 'blue'],
+
+  /**
+   * 主题色
+   * @see https://theme-plume.vuejs.press/config/theme/#themeColor
+   */
+  // themeColor: '#3eaf7c',
+
+  /**
+   * 过渡动画
+   * @see https://theme-plume.vuejs.press/config/theme/#transition
+   */
+  // transition: {
+  //   page: true,        // 启用 页面间跳转过渡动画
+  //   postList: true,    // 启用 博客文章列表过渡动画
+  //   appearance: 'fade',  // 启用 深色模式切换过渡动画, 或配置过渡动画类型
+  // },
 })

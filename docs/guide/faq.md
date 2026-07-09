@@ -341,3 +341,7 @@ CyreneNameRoller 是桌面应用，基于 Electron 构建。未来计划推出 W
 4. **查看源码**：如果有开发能力，可以直接查看源码
 
 我们会在第一时间回复你的问题！
+
+## 许可证
+
+本文档采用 **CC BY-NC-SA 4.0**（署名-非商业性使用-相同方式共享 4.0 国际）许可证。详见 [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/) 文件。

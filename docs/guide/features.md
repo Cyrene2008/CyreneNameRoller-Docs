@@ -235,7 +235,7 @@ description: 深入了解 CyreneNameRoller 的各项功能
 - 邮箱：见 GitHub 主页
 
 ### 开源协议
-本项目采用 GPL-3.0 开源协议。详见 [LICENSE](https://github.com/Cyrene2008/CyreneNameRoller/blob/main/LICENSE) 文件。
+本文档采用 **CC BY-NC-SA 4.0**（署名-非商业性使用-相同方式共享 4.0 国际）许可证。详见 [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/) 文件。
 
 ## 键盘快捷键
 

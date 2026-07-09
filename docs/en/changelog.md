@@ -106,3 +106,7 @@ If you need to download older versions:
 - [ ] API开放
 
 Feel free to suggest your ideas on [GitHub Issues](https://github.com/Cyrene2008/CyreneNameRoller/issues)!
+
+## License
+
+This documentation is licensed under **CC BY-NC-SA 4.0**. See [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/) for details.

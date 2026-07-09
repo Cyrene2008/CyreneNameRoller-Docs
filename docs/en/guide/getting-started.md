@@ -127,3 +127,7 @@ The app uses dual-write persistence, data usually auto-recovers. If issues persi
 - Learn about the [balance algorithm](/en/guide/balance-algorithm.md)
 - Customize [configuration options](/en/guide/configuration.md)
 - Read the [changelog](/en/changelog) for latest features
+
+## License
+
+This documentation is licensed under **CC BY-NC-SA 4.0**. See [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/) for details.

@@ -106,3 +106,7 @@ description: CyreneNameRoller 版本更新历史
 - [ ] API 开放
 
 欢迎在 [GitHub Issues](https://github.com/Cyrene2008/CyreneNameRoller/issues) 中提出你的建议！
+
+## 许可证
+
+本文档采用 **CC BY-NC-SA 4.0**（署名-非商业性使用-相同方式共享 4.0 国际）许可证。详见 [LICENSE](https://creativecommons.org/licenses/by-nc-sa/4.0/) 文件。
