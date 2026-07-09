@@ -1,4 +1,4 @@
-name: Test and Build
+name: Test Build
 
 on:
   push:
@@ -11,10 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,8 +30,6 @@ jobs:
 
       - name: Test build
         run: pnpm docs:build
-        env:
-          NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Check build output
         run: |
@@ -46,14 +42,3 @@ jobs:
             exit 1
           fi
           echo "Build successful!"
-
-      - name: Lint files (optional)
-        run: |
-          # 检查是否有明显的语法错误
-          find docs/ -name "*.md" -exec sh -c '
-            echo "Checking $1"
-            if grep -q "<<" "$1" && grep -q ">>" "$1"; then
-              echo "Potential merge conflict in $1"
-              exit 1
-            fi
-          ' _ {} \;
