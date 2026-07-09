@@ -1,0 +1,40 @@
+{
+  "name": "CyrenesNameRoller-Docs",
+  "version": "1.0.0",
+  "description": "Documentation for Cyrene's Name Roller - Random Name Picker Desktop App",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:dev-clean": "vuepress dev docs --clean-cache --clean-temp",
+    "docs:build": "vuepress build docs --clean-cache --clean-temp",
+    "docs:preview": "http-server docs/.vuepress/dist",
+    "vp-update": "pnpm dlx vp-update"
+  },
+  "keywords": [
+    "name-roller",
+    "random-picker",
+    "desktop-app",
+    "electron",
+    "tauri",
+    "documentation"
+  ],
+  "author": "Cyrene2008",
+  "license": "CC BY-NC-SA 4.0",
+  "packageManager": "pnpm@10.29.3",
+  "engines": {
+    "node": "^20.6.0 || >=22.0.0"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.90",
+    "@vuepress/bundler-vite": "2.0.0-rc.26",
+    "baseline-browser-mapping": "^2.9.19",
+    "http-server": "^14.1.1",
+    "typescript": "^5.9.3",
+    "vue": "^3.5.28",
+    "vuepress": "2.0.0-rc.26",
+    "vuepress-theme-plume": "1.0.0-rc.190"
+  },
+  "dependencies": {
+    "vuepress-plugin-giscus": "2.0.0-alpha.2"
+  }
+}
