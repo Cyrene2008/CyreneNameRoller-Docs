@@ -98,18 +98,10 @@ export default defineThemeConfig({
   },
 
   /**
-   * 博客配置
+   * 博客配置（已迁移到 collections 系统）
    * @see https://theme-plume.vuejs.press/config/theme/#blog
    */
-  blog: {
-    // description: 'Blog description',
-    // medias: ['bilibili', 'zhihu', 'juejin', 'twitter'],
-    // avatar: 'https://theme-plume.vuejs.press/plume.png',
-    // name: '博主名称',
-    // location: '博主所在地区',
-    // organization: '博主所属组织',
-    // intro: '博主简介，支持 HTML',
-  },
+  // blog: {},
 
   /**
    * 评论配置

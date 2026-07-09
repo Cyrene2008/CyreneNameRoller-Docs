@@ -1,6 +1,8 @@
 ---
 title: 平衡算法
 description: 了解 CyreneNameRoller 的智能平衡点名机制
+createTime: 2026/07/09 15:49:22
+permalink: /guide/7shf5d2j/
 ---
 
 # 平衡算法

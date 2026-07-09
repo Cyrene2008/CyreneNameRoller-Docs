@@ -1,9 +1,11 @@
 ---
 title: Welcome to CyreneNameRoller Docs
-date: 2026-07-09
+date: 2026-07-09T00:00:00.000Z
 tags:
   - announcement
   - welcome
+createTime: 2026/07/09 15:49:22
+permalink: /blog/jh8m0nb9/
 ---
 
 # Welcome to CyreneNameRoller Docs

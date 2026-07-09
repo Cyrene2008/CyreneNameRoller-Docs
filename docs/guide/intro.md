@@ -1,6 +1,8 @@
 ---
 title: 项目介绍
 description: CyreneNameRoller - 基于 Vue 3 + Electron 的随机点名桌面应用
+createTime: 2026/07/09 15:49:22
+permalink: /guide/au4h7chh/
 ---
 
 # 项目介绍

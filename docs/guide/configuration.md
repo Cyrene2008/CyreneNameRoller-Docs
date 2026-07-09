@@ -1,6 +1,8 @@
 ---
 title: 配置选项
 description: 详细说明 CyreneNameRoller 的各项配置
+createTime: 2026/07/09 15:49:22
+permalink: /guide/u7dq5bbj/
 ---
 
 # 配置选项

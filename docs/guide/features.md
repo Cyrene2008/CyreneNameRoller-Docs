@@ -1,6 +1,8 @@
 ---
 title: 功能详解
 description: 深入了解 CyreneNameRoller 的各项功能
+createTime: 2026/07/09 15:49:22
+permalink: /guide/xw6rucdb/
 ---
 
 # 功能详解

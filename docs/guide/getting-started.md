@@ -1,6 +1,8 @@
 ---
 title: 快速开始
 description: 从零开始使用 CyreneNameRoller
+createTime: 2026/07/09 15:49:22
+permalink: /guide/pz3qwyb2/
 ---
 
 # 快速开始

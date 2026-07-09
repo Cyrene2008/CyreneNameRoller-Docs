@@ -1,6 +1,8 @@
 ---
 title: 开发指南
 description: CyreneNameRoller 开发文档
+createTime: 2026/07/09 15:49:22
+permalink: /guide/a2l3kv44/
 ---
 
 # 开发指南

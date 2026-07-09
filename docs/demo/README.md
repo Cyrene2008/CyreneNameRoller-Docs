@@ -1,5 +1,7 @@
 ---
 title: 示例
+createTime: 2026/07/09 15:49:22
+permalink: /demo/
 ---
 
 # 示例文档
