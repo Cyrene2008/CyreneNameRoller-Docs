@@ -8,13 +8,13 @@ description: Frequently asked questions about Cyrene's Name Roller
 ## Basic Questions
 
 ### Q: What is Cyrene's Name Roller?
-A: Cyrene's Name Roller is a random name picking desktop application based on Vue 3 + Electron, using Windows 11 Fluent Design language, supporting random name picking, card flip name picking, data management, and other features.
+A: Cyrene's Name Roller is a Vue 3 + Vite random picker available for Tauri, Electron, and the browser, with random picking, card flip, group draw, and data management.
 
 ### Q: What operating systems are supported?
 A: Currently mainly supports Windows 10/11 operating systems. macOS and Linux support is experimental.
 
 ### Q: How to download and install?
-A: You can download the latest version from the [GitHub Releases](https://github.com/Cyrene2008/CyreneNameRoller/releases) page, extract and use immediately, no installation required.
+A: Download a Tauri or Electron Windows `.exe` installer from [GitHub Releases](https://github.com/Cyrene2008/CyreneNameRoller/releases), run it, and follow the installation prompts.
 
 ### Q: Does it require internet connection to use?
 A: No. All data processing is completed locally, no network connection required.
@@ -28,13 +28,13 @@ A: In the data management interface, click "List Management", then click "Add Li
 A: In the list management interface, click "Import" button, select a text file (one name per line) to batch import.
 
 ### Q: What is the balanced algorithm?
-A: The balanced algorithm ensures that over time, each student is picked roughly the same number of times. Fewer picks result in higher probability.
+A: The current fairness algorithm uses a fixed absolute soft-gap target of 2. It recalculates probabilities from historical counts after every pick, favors lower-count candidates, and always keeps every candidate above zero probability, so 2 is not a hard transient limit.
 
 ### Q: How to backup data?
 A: In the settings interface, you can configure automatic backup function, or manually export lists and records.
 
 ### Q: Where is data stored?
-A: Data is stored by default in the data folder in the application directory. You can change the storage location in settings.
+A: Tauri stores JSON files under the system app-data directory, Electron uses electron-store in its user-data directory, and the browser version uses localStorage. Settings currently does not expose a custom storage path.
 
 ## Technical Questions
 
@@ -57,7 +57,7 @@ A: Try the following methods:
 3. Search for historical data in pick records
 
 ### Q: How to update the application?
-A: The application supports automatic updates. You can also manually download the latest version and overwrite the installation.
+A: Electron and Tauri check for updates in Settings, download and validate the installer natively, then launch it automatically. Manual installation from GitHub Releases remains available.
 
 ## Development Questions
 
@@ -65,10 +65,10 @@ A: The application supports automatic updates. You can also manually download th
 A: Please refer to the [Contribution Guide](/en/doc/resources/contribute) to learn how to participate in project development.
 
 ### Q: What technology stack is used?
-A: Frontend uses Vue 3 + Vite, desktop uses Electron, state management uses Pinia, routing uses Vue Router.
+A: The frontend uses Vue 3 + Vite, desktop builds support both Tauri 2 and Electron, state management uses Pinia, and routing uses Vue Router.
 
 ### Q: How to build the project?
-A: After cloning the repository, run `npm install` to install dependencies, then run `npm run dev` to start the development server, or run `npm run electron:build` to build the Electron client.
+A: Run `npm install` after cloning. Use `npm run dev` for development, `npm run electron:build` for Electron, and `npm run tauri:build` for Tauri.
 
 ## Other Questions
 

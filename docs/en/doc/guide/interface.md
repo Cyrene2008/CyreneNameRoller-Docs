@@ -43,8 +43,9 @@ Displays different function interfaces based on the selected page. Page switchin
 Core random picking functionality:
 
 - **Mode Toggle**: Single mode / Multiple mode
-- **Count Adjustment**: In multiple mode, set the number of people to pick (2 to list size limit)
-- **No Repeat**: Toggle control whether the same person can be picked multiple times
+- **Count Adjustment**: With replacement, the count is not limited by list size; without replacement, it is limited to the available candidates
+- **No Repeat**: Controls whether a person may reappear in the current batch; both modes update fairness state after every pick
+- **Group Mode**: Switch the draw target from people to groups in the current list and combine it with multiple mode
 - **English Mode**: Switch between Chinese name/English name display
 - **List Selection**: Dropdown menu to select different lists
 - **Start Button**: Start random picking
@@ -102,6 +103,12 @@ List and member management:
 - **Import/Export**: Import/export list as `.json` file
 - **Whitelist Marking**: Whitelist members display special markers, cannot be deleted
 
+### Group Management Page
+
+- Create, edit, and delete groups for the current list
+- Configure Chinese and English group names, group IDs, and members
+- Batch-assign members to groups from list management
+
 ### Settings Page
 
 Personalization configuration options, divided into the following sections:
@@ -110,7 +117,8 @@ Personalization configuration options, divided into the following sections:
 - **Theme & Display**: Name color mode, UI scaling, name font size
 - **Performance Settings**: Acrylic blur, shadow effects, transition animations
 - **Data Management**: Enable data statistics, data operation password, data export/import/clear
-- **Balance Algorithm**: Enable toggle, curve editor
+- **Balance Algorithm**: Enable toggle and fixed fairness-rule description; fairness parameters are not editable
+- **Desktop Updates**: Check or force a release, then let the native layer validate and launch the downloaded installer
 - **Update Log**: Version update history
 
 ### About Page
@@ -137,7 +145,6 @@ The application uses custom Fluent Design components:
 - **FluentSelect**: Dropdown selector
 - **FluentToast**: Bottom-right notification, supports action buttons
 - **FluentToggle**: Toggle switch
-- **BalanceEditor**: Balance curve editor, Canvas rendering, draggable control points
 
 ## Interface Operation Tips
 

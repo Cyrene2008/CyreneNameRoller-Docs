@@ -71,6 +71,12 @@ Visit [web点名器.昔涟.cn](https://web点名器.昔涟.cn) to use directly i
    ```
    Build output is in the `release/` directory.
 
+5. **Build Tauri Client**
+   ```bash
+   npm run tauri:build
+   ```
+   The NSIS installer is written to `src-tauri/target/release/bundle/nsis/`.
+
 ## First Launch
 
 When you first launch Cyrene's Name Roller, you'll see the main interface. The application automatically loads the default list, and you can immediately start using the random name picking feature.
@@ -101,6 +107,10 @@ When you first launch Cyrene's Name Roller, you'll see the main interface. The a
 3. Set name font size
 4. Switch dark/light mode
 5. Switch Chinese/English interface
+
+## Desktop Updates
+
+Electron and Tauri provide normal and forced update checks in Settings. When a matching Windows installer is available, the native layer downloads, validates, and launches it. The download page is a browser-only entry and is not used by desktop updates.
 
 ## Frequently Asked Questions
 

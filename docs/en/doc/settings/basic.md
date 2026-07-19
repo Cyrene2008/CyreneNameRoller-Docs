@@ -88,6 +88,7 @@ Control whether to record extraction statistics:
 
 - **On** (default): Automatically record pick counts and probability distribution
 - **Off**: Stop recording statistics, existing statistics are preserved but no longer updated
+- **While fairness is enabled**: Statistics are part of the algorithm state, so the app enables and locks this switch. Disable fairness first if you need to turn statistics off.
 
 ### Data Operation Password
 
@@ -135,21 +136,22 @@ Clear all data and restore default settings:
 
 Control the fairness of random picking:
 
-- **On**: Use balance algorithm, fewer picks result in higher probability
+- **On**: Use `cyrenenameroller-balance/v3` with a fixed absolute soft-gap target of 2 and adjust the next-pick probability from historical counts
 - **Off**: Completely random picking, same probability each time
 
-### Curve Editor
+### Fixed Fairness Rules
 
-Customize the probability adjustment curve of the balance algorithm:
+Fairness parameters are not user-editable, preventing accidental or intentional settings from destabilizing results:
 
-- **Visual Editing**: Drag 3 control points on the Canvas to adjust curve shape
-- **Algorithm**: Based on Fritsch-Carlson monotone Hermite cubic interpolation
-- **How It Works**: Calculate each student's "deficit" (expected count - actual count), larger deficit means higher probability boost
-- **Default Parameters**:
-  - `factor`: 13.3
-  - `maxThreshold`: 3
-  - `maxBoostPercent`: 1200%
+- **Absolute gap 2**: The long-run target is a difference of about 2 picks between the highest and lowest counts, not a percentage difference
+- **Soft target**: Every candidate always keeps non-zero probability, so the gap may briefly exceed 2 before negative feedback restores it
+- **Multi-pick mode**: With or without replacement, every selected person updates temporary counts before the next probability calculation
+- **Probability guards**: Cap a candidate's current single-pick probability and keep boundary penalties moderate to avoid near-certain or near-excluded outcomes
 - **Statistics Display**: The statistics page displays both "Original Probability" and "Balanced Probability" columns
+
+### Desktop Updates
+
+When Settings finds a new release, Electron and Tauri download it through their native layer into the system temporary directory. The app validates the official release URL, expected size, and Windows EXE header before launching the installer and exiting. The browser version continues to use the download page or an external release link.
 
 ## Update Log
 

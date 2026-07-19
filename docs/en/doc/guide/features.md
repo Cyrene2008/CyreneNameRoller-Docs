@@ -12,9 +12,10 @@ Cyrene's Name Roller is a feature-rich random name picking desktop application t
 ### Basic Random Picking
 
 - **Single Mode**: Pick one student at a time
-- **Multiple Mode**: Pick multiple students at a time (configurable count, minimum 2)
-- **No Repeat**: Pick without replacement, ensuring each person is picked only once per list
-- **Balanced Algorithm**: Fewer picks result in higher probability, ensuring fairness
+- **Multiple Mode**: Pick multiple students; with replacement the count is unlimited, while no-repeat mode is limited to available candidates
+- **No Repeat**: Pick without replacement within the current batch and remove selected candidates from that batch pool
+- **Balanced Algorithm**: Use a fixed absolute soft-gap target of 2, update state after every pick, and keep every candidate above zero probability
+- **Group Mode**: Draw one or more groups from the current list
 
 ### Gradient Name Animation
 
@@ -101,6 +102,12 @@ Supports multiple lists with real-time switching in the random name picking inte
 - **Import List**: Import list from `.json` file (adds as new list)
 - **No password verification required**
 
+### Group Management
+
+- Create independent groups for each list with Chinese and English names, group IDs, and members
+- Batch-assign groups from list management
+- Switch the roller to group mode and combine it with multiple mode
+
 ## Personalization Settings
 
 ### Interface Customization
@@ -123,7 +130,7 @@ Supports multiple lists with real-time switching in the random name picking inte
 
 ### Data Security
 
-- **Enable Data Statistics**: Control whether to record extraction statistics
+- **Enable Data Statistics**: Control extraction statistics; fairness automatically enables and locks statistics while active
 - **Data Operation Password**: Set password to protect sensitive operations like data export, import, and clearing
 - **Password Encryption**: SHA-256 hash storage, irreversible
 
@@ -147,6 +154,12 @@ Supports multiple lists with real-time switching in the random name picking inte
 - **Electron**: Uses electron-store
 - **Browser**: Uses localStorage
 - **Data Export**: Support full data export as `.cyrene` file
+
+### Desktop Updates
+
+- Electron and Tauri check GitHub Releases from Settings
+- Their native layers download installers into the system temporary directory instead of using the browser download page
+- The app validates the official URL, expected size, minimum size, and EXE header before automatically launching the installer
 
 ## Common Use Cases
 

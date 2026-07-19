@@ -71,6 +71,12 @@ description: 如何开始使用 Cyreneの随机点名器
    ```
    打包产物在 `release/` 目录下。
 
+5. **构建 Tauri 客户端**
+   ```bash
+   npm run tauri:build
+   ```
+   NSIS 安装包位于 `src-tauri/target/release/bundle/nsis/`。
+
 ## 首次启动
 
 当您首次启动 Cyreneの随机点名器时，您将看到主界面。应用会自动加载默认名单，您可以立即开始使用随机点名功能。
@@ -101,6 +107,10 @@ description: 如何开始使用 Cyreneの随机点名器
 3. 设置名字字体大小
 4. 切换深色/浅色模式
 5. 切换中/英文界面
+
+## 桌面端更新
+
+Electron 和 Tauri 客户端在设置页提供检查更新和强制更新。发现对应平台的 Windows 安装包后，应用会在原生层下载、校验并启动安装程序；下载页是浏览器版入口，不参与桌面客户端更新流程。
 
 ## 常见问题
 

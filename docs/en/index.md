@@ -30,7 +30,7 @@ config:
     features:
       - title: Random Name Picking
         icon: lucide:shuffle
-        details: Supports single/multiple modes, no repeat picking, balanced algorithm for fairness, rainbow name animation
+        details: Supports single, multiple, group, and no-repeat modes with fairness state updated after every pick
       - title: Card Flip Name Picking
         icon: lucide:layers
         details: 3D card flip animation, one-click multiple picking, automatic shuffle + flip, persistent card history
@@ -45,7 +45,7 @@ config:
         details: Uses Windows 11 Fluent Design language, clean and modern interface, intuitive operation
       - title: Probability Balance
         icon: lucide:scale
-        details: Intelligent balanced algorithm ensures long-term fairness, fewer picks result in higher probability, preventing "always the same few people"
+        details: Uses a fixed absolute soft-gap target of 2, keeps every candidate above zero probability, and protects fairness parameters from editing
 
   - type: markdown
     content: |
@@ -67,7 +67,7 @@ config:
         <div class="tech-card">
           <h3 class="tech-subtitle">Balanced Algorithm</h3>
           <p class="tech-description">
-            Intelligent balanced algorithm ensures long-term fairness, fewer picks result in higher probability, ideal for teaching scenarios
+            Uses a fixed absolute soft-gap target of 2 and sequential state updates to balance long-run fairness with genuine random opportunity
           </p>
         </div>
         <div class="tech-card">
@@ -94,9 +94,9 @@ config:
           <div class="step">
             <div class="step-number">2</div>
             <div class="step-content">
-              <h3 class="step-title">Extract and Run</h3>
+              <h3 class="step-title">Install the Client</h3>
               <p class="step-description">
-                Extract the downloaded files, double-click the executable to launch the application
+                Run the Tauri or Electron Windows installer and follow the prompts
               </p>
             </div>
           </div>

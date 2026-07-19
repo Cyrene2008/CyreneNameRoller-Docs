@@ -30,7 +30,7 @@ config:
     features:
       - title: 随机点名
         icon: lucide:shuffle
-        details: 支持单人/多人模式，禁止重复抽取，平衡算法确保公平性，支持彩虹名称动画
+        details: 支持单人、多人、小组模式和禁止重复抽取，固定公平算法逐抽更新状态
       - title: 翻牌点名
         icon: lucide:layers
         details: 3D 翻转卡牌动画，一键多抽，自动洗牌+翻牌，收牌历史持久化
@@ -45,7 +45,7 @@ config:
         details: 采用 Windows 11 Fluent Design 设计语言，界面简洁现代，操作直观
       - title: 概率平衡
         icon: lucide:scale
-        details: 智能平衡算法确保长期公平性，被抽中次数越少概率越高，杜绝"总是那几个人"的情况
+        details: 以绝对次数极差 2 为固定软目标，所有候选者始终保留非零概率，公平参数不可篡改
 
   - type: markdown
     content: |
@@ -67,7 +67,7 @@ config:
         <div class="tech-card">
           <h3 class="tech-subtitle">平衡算法</h3>
           <p class="tech-description">
-            智能平衡算法确保长期公平性，被抽中次数越少概率越高，教学场景的理想选择
+            以绝对次数极差 2 为固定软目标，逐抽更新状态，在长期公平与真实随机机会之间取得平衡
           </p>
         </div>
         <div class="tech-card">
@@ -94,9 +94,9 @@ config:
           <div class="step">
             <div class="step-number">2</div>
             <div class="step-content">
-              <h3 class="step-title">解压运行</h3>
+              <h3 class="step-title">安装客户端</h3>
               <p class="step-description">
-                解压下载的文件，双击可执行文件启动应用程序
+                运行 Tauri 或 Electron 的 Windows 安装程序，按提示完成安装
               </p>
             </div>
           </div>

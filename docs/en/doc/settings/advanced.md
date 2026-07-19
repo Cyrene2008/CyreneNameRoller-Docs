@@ -11,7 +11,7 @@ The application automatically selects the storage method based on the runtime en
 
 ### Tauri Version
 
-Data is stored as independent JSON files in the `data/` directory, read and written through the Rust backend. Storage keys include:
+Data is stored as independent JSON files under the Tauri app-data directory's `data/` subdirectory and is read and written through the Rust backend. This is not the installation directory. Storage keys include:
 
 - `settings`: User settings
 - `lists`: List data
@@ -76,29 +76,25 @@ Card flip mode's tray history and used names are automatically persisted, allowi
 
 ### Algorithm Principle
 
-The balance algorithm works through the following steps:
+The current algorithm identifier is `cyrenenameroller-balance/v3`, with a stable module path at `src/utils/cyrene-balance.js`. It works through the following steps:
 
-1. **Calculate Deficit**: For each student, calculate `deficit = expected pick count - actual pick count`
-2. **Probability Boost Calculation**: Find the corresponding probability boost percentage on the balance curve based on the deficit value
-3. **Weighted Random**: Use the boosted probability for weighted random selection
+1. **Expected-count error**: Compare each regular member's actual count with the current average expected count
+2. **Adaptive negative feedback**: Raise weights below expectation and lower weights above expectation, with stronger recovery as the current gap grows
+3. **Project the next state**: Simulate the absolute gap after selecting each candidate and apply a moderate penalty when moving beyond target 2
+4. **Probability guards**: Keep every probability above zero and cap a single candidate at 30% when at least four candidates remain
+5. **Secure randomness**: Prefer Web Crypto before performing weighted selection
 
-### Interpolation Method
+### Fairness Boundary
 
-Uses Fritsch-Carlson monotone Hermite cubic interpolation for smooth transitions between 3 control points, ensuring the curve is monotonically increasing.
+- Absolute gap `2` is a fixed soft target for classroom use, not a hard mathematical upper bound
+- A strict never-above-2 guarantee would require setting some candidates to zero probability, conflicting with the requirement that everyone always has a chance
+- In seeded simulations, 13 candidates over 100,000 picks finish with a gap of 1-2, while transient states can briefly be higher
+- Users can only enable or disable fairness; sensitivity, curves, ratios, and gap targets are not editable
 
-### Default Control Points
+### Multi-Pick State Updates
 
-| Control Point | X (Deficit) | Y (Probability Boost%) |
-|---------------|-------------|------------------------|
-| Point 1       | 0.3         | 150%                   |
-| Point 2       | 1.5         | 420%                   |
-| Point 3       | 2.4         | 800%                   |
-
-### Parameter Description
-
-- `factor` (13.3): Base weight factor
-- `maxThreshold` (3): Maximum deficit threshold
-- `maxBoostPercent` (1200%): Maximum probability boost cap
+- **With replacement**: The requested count is not limited by list size. Temporary counts update after every position, so a repeated candidate already reflects the previous result.
+- **Without replacement**: The count is limited to available candidates. Each pick updates temporary counts, is removed from the current batch pool, and triggers a fresh calculation for the remaining candidates.
 
 ## Data Operation Security
 
