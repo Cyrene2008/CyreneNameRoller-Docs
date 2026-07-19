@@ -75,7 +75,7 @@ description: 如何开始使用 Cyreneの随机点名器
    ```bash
    npm run tauri:build
    ```
-   NSIS 安装包位于 `src-tauri/target/release/bundle/nsis/`。
+   NSIS 安装包位于 `target/release/bundle/nsis/`。
 
 ## 首次启动
 

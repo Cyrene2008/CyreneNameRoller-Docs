@@ -75,7 +75,7 @@ Visit [web点名器.昔涟.cn](https://web点名器.昔涟.cn) to use directly i
    ```bash
    npm run tauri:build
    ```
-   The NSIS installer is written to `src-tauri/target/release/bundle/nsis/`.
+   The NSIS installer is written to `target/release/bundle/nsis/`.
 
 ## First Launch
 
